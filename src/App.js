@@ -1,7 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
+import Axios from 'axios';
+
+const serverUrl = 'http://localhost:3001'
 
 function App() {
+
+  useEffect(() => {
+    Axios.get(serverUrl)
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  })
+
   return (
     <div className="App">
       <header className="App-header">
